@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Pets</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>🐾 Pixel Pets 🐾</h1>
+
+  <!-- Pet Selection -->
+  <div id="pet-selection">
+    <p>Choose your pet:</p>
+    <button onclick="selectPet('dog')">🐶 Dog</button>
+    <button onclick="selectPet('cat')">🐱 Cat</button>
+    <button onclick="selectPet('bunny')">🐰 Bunny</button>
+    <button onclick="selectPet('snake')">🐍 Snake</button>
+    <button onclick="selectPet('chameleon')">🦎 Chameleon</button>
+    <button onclick="selectPet('dragon')">🐉 Dragon</button>
+  </div>
+
+  <!-- Game UI -->
+  <div id="game" style="display: none;">
+    <div id="pet-container">
+      <div id="pet-image">❓</div>
+    </div>
+
+    <div id="stats">
+      <p>Hunger: <span id="hunger">100</span></p>
+      <p>Happiness: <span id="happiness">100</span></p>
+      <p>Energy: <span id="energy">100</span></p>
+    </div>
+
+    <div id="controls">
+      <button onclick="feedPet()">🍗 Feed</button>
+      <button onclick="playWithPet()">🎾 Play</button>
+      <button onclick="restPet()">🛌 Rest</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
