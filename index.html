@@ -10,15 +10,14 @@
 <body>
   <h1>🐾 Pixel Pets 🐾</h1>
 
-  <!-- Instructions -->
   <div id="instructions">
     <p><strong>INSTRUCTIONS:</strong></p>
     <p>Use W A S D to move your pet.</p>
-    <p>Feed 🍗, Play 🎾, and Rest 🛌 to keep your pet happy!</p>
-    <p>Complete the daily challenge to earn a reward 🏆</p>
+    <p>Touch items (🍗 🎾 🛏️) when they spawn to recover stats.</p>
+    <p>💩 = clean poop, 🎈 = pop balloon, 🐶 = say hi to friend, 🛁 = take a bath</p>
+    <p>Complete your daily challenge below ⬇️</p>
   </div>
 
-  <!-- Pet Selection -->
   <div id="pet-selection">
     <p>Choose your pet:</p>
     <button onclick="selectPet('dog')">🐶 Dog</button>
@@ -29,22 +28,20 @@
     <button onclick="selectPet('dragon')">🐉 Dragon</button>
   </div>
 
-  <!-- Game UI -->
   <div id="game" style="display: none;">
-    <div id="pet-container">
+    <div id="game-area">
       <div id="pet-image">❓</div>
+      <div id="item"></div>
+      <div id="poop"></div>
+      <div id="balloon"></div>
+      <div id="friend"></div>
+      <div id="bath-zone">🛁</div>
     </div>
 
     <div id="stats">
       <p>Hunger: <span id="hunger">100</span></p>
       <p>Happiness: <span id="happiness">100</span></p>
       <p>Energy: <span id="energy">100</span></p>
-    </div>
-
-    <div id="controls">
-      <button onclick="feedPet()">🍗 Feed</button>
-      <button onclick="playWithPet()">🎾 Play</button>
-      <button onclick="restPet()">🛌 Rest</button>
     </div>
 
     <div id="challenge">

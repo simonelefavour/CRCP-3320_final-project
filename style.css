@@ -1,14 +1,14 @@
 body {
   text-align: center;
   background-color: #1b1b1b;
-  color: #00ffcc;
+  color: white;
   font-family: 'Press Start 2P', monospace;
-  padding: 20px;
+  padding: 10px;
 }
 
 h1 {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #instructions p {
@@ -16,13 +16,7 @@ h1 {
   margin: 2px;
 }
 
-#pet-selection p {
-  margin-bottom: 10px;
-  font-size: 12px;
-}
-
-#pet-selection button,
-#controls button {
+#pet-selection button {
   font-size: 14px;
   padding: 10px 20px;
   margin: 5px;
@@ -32,41 +26,37 @@ h1 {
   cursor: pointer;
 }
 
-#pet-selection button:hover,
-#controls button:hover {
+#pet-selection button:hover {
   background-color: #00ffcc;
   color: #1b1b1b;
 }
 
-#pet-container {
+#game-area {
   position: relative;
-  height: 200px;
-  margin: 30px auto;
-  width: 350px;
+  width: 400px;
+  height: 250px;
+  margin: 20px auto;
   border: 2px dashed #00ffcc;
+  background-color: #111;
+  overflow: hidden;
 }
 
-#pet-image {
-  font-size: 80px;
-  image-rendering: pixelated;
+#pet-image, #item, #poop, #balloon, #friend {
+  font-size: 48px;
   position: absolute;
-  left: 100px;
-  top: 50px;
   transition: top 0.05s, left 0.05s;
 }
 
-#stats {
-  font-size: 12px;
-  margin-bottom: 20px;
+#bath-zone {
+  font-size: 36px;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
 }
 
-#stats p {
-  margin: 6px 0;
-}
-
-#challenge {
+#stats, #challenge {
   font-size: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #challenge-complete {
