@@ -3,10 +3,14 @@ let hunger = 100;
 let happiness = 100;
 let energy = 100;
 
-// Starting position of the pet
 let petX = 100;
 let petY = 50;
 const moveAmount = 10;
+
+// Challenge system
+let challengeType = "";
+let challengeGoal = 0;
+let challengeProgress = 0;
 
 const petEmojiMap = {
   dog: "🐶",
@@ -19,13 +23,11 @@ const petEmojiMap = {
 
 function selectPet(pet) {
   selectedPet = pet;
-
-  const petImage = document.getElementById("pet-image");
-  petImage.innerText = petEmojiMap[pet] || "❓";
-
+  document.getElementById("pet-image").innerText = petEmojiMap[pet] || "❓";
   document.getElementById("pet-selection").style.display = "none";
   document.getElementById("game").style.display = "block";
 
+  generateChallenge();
   updateStats();
 }
 
@@ -37,24 +39,28 @@ function updateStats() {
 
 function feedPet() {
   hunger = Math.min(hunger + 10, 100);
+  checkChallenge("feed");
   updateStats();
 }
 
 function playWithPet() {
   happiness = Math.min(happiness + 10, 100);
   energy = Math.max(energy - 10, 0);
+  checkChallenge("play");
   updateStats();
 }
 
 function restPet() {
   energy = Math.min(energy + 10, 100);
   hunger = Math.max(hunger - 5, 0);
+  checkChallenge("rest");
   updateStats();
 }
 
-// Movement controls
+// Movement
 document.addEventListener("keydown", function (event) {
-  switch (event.key.toLowerCase()) {
+  const key = event.key.toLowerCase();
+  switch (key) {
     case "w":
       petY = Math.max(0, petY - moveAmount);
       break;
@@ -73,3 +79,27 @@ document.addEventListener("keydown", function (event) {
   pet.style.left = petX + "px";
   pet.style.top = petY + "px";
 });
+
+// Challenge logic
+function generateChallenge() {
+  const types = ["feed", "play", "rest"];
+  challengeType = types[Math.floor(Math.random() * types.length)];
+  challengeGoal = Math.floor(Math.random() * 3) + 2; // 2 to 4 times
+  challengeProgress = 0;
+
+  document.getElementById("challenge-text").innerText = `Do '${challengeType}' ${challengeGoal} times`;
+  document.getElementById("challenge-goal").innerText = challengeGoal;
+  document.getElementById("challenge-progress").innerText = challengeProgress;
+  document.getElementById("challenge-complete").innerText = "";
+}
+
+function checkChallenge(action) {
+  if (action === challengeType && challengeProgress < challengeGoal) {
+    challengeProgress++;
+    document.getElementById("challenge-progress").innerText = challengeProgress;
+
+    if (challengeProgress === challengeGoal) {
+      document.getElementById("challenge-complete").innerText = "🎉 Challenge Completed! Your pet is proud of you!";
+    }
+  }
+}

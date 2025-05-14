@@ -10,6 +10,14 @@
 <body>
   <h1>🐾 Pixel Pets 🐾</h1>
 
+  <!-- Instructions -->
+  <div id="instructions">
+    <p><strong>INSTRUCTIONS:</strong></p>
+    <p>Use W A S D to move your pet.</p>
+    <p>Feed 🍗, Play 🎾, and Rest 🛌 to keep your pet happy!</p>
+    <p>Complete the daily challenge to earn a reward 🏆</p>
+  </div>
+
   <!-- Pet Selection -->
   <div id="pet-selection">
     <p>Choose your pet:</p>
@@ -37,6 +45,12 @@
       <button onclick="feedPet()">🍗 Feed</button>
       <button onclick="playWithPet()">🎾 Play</button>
       <button onclick="restPet()">🛌 Rest</button>
+    </div>
+
+    <div id="challenge">
+      <p><strong>Challenge:</strong> <span id="challenge-text"></span></p>
+      <p><strong>Progress:</strong> <span id="challenge-progress">0</span>/<span id="challenge-goal">0</span></p>
+      <p id="challenge-complete"></p>
     </div>
   </div>
 
