@@ -1,0 +1,75 @@
+body {
+  text-align: center;
+  background-color: #1b1b1b;
+  color: #00ffcc;
+  font-family: 'Press Start 2P', monospace;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#instructions p {
+  font-size: 10px;
+  margin: 2px;
+}
+
+#pet-selection p {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+#pet-selection button,
+#controls button {
+  font-size: 14px;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #333;
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+  cursor: pointer;
+}
+
+#pet-selection button:hover,
+#controls button:hover {
+  background-color: #00ffcc;
+  color: #1b1b1b;
+}
+
+#pet-container {
+  position: relative;
+  height: 200px;
+  margin: 30px auto;
+  width: 350px;
+  border: 2px dashed #00ffcc;
+}
+
+#pet-image {
+  font-size: 80px;
+  image-rendering: pixelated;
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  transition: top 0.05s, left 0.05s;
+}
+
+#stats {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+#stats p {
+  margin: 6px 0;
+}
+
+#challenge {
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+#challenge-complete {
+  color: gold;
+  font-size: 10px;
+}

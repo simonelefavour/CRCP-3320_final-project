@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Pets</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>🐾 Pixel Pets 🐾</h1>
+
+  <!-- Instructions -->
+  <div id="instructions">
+    <p><strong>INSTRUCTIONS:</strong></p>
+    <p>Use W A S D to move your pet.</p>
+    <p>Feed 🍗, Play 🎾, and Rest 🛌 to keep your pet happy!</p>
+    <p>Complete the daily challenge to earn a reward 🏆</p>
+  </div>
+
+  <!-- Pet Selection -->
+  <div id="pet-selection">
+    <p>Choose your pet:</p>
+    <button onclick="selectPet('dog')">🐶 Dog</button>
+    <button onclick="selectPet('cat')">🐱 Cat</button>
+    <button onclick="selectPet('bunny')">🐰 Bunny</button>
+    <button onclick="selectPet('snake')">🐍 Snake</button>
+    <button onclick="selectPet('chameleon')">🦎 Chameleon</button>
+    <button onclick="selectPet('dragon')">🐉 Dragon</button>
+  </div>
+
+  <!-- Game UI -->
+  <div id="game" style="display: none;">
+    <div id="pet-container">
+      <div id="pet-image">❓</div>
+    </div>
+
+    <div id="stats">
+      <p>Hunger: <span id="hunger">100</span></p>
+      <p>Happiness: <span id="happiness">100</span></p>
+      <p>Energy: <span id="energy">100</span></p>
+    </div>
+
+    <div id="controls">
+      <button onclick="feedPet()">🍗 Feed</button>
+      <button onclick="playWithPet()">🎾 Play</button>
+      <button onclick="restPet()">🛌 Rest</button>
+    </div>
+
+    <div id="challenge">
+      <p><strong>Challenge:</strong> <span id="challenge-text"></span></p>
+      <p><strong>Progress:</strong> <span id="challenge-progress">0</span>/<span id="challenge-goal">0</span></p>
+      <p id="challenge-complete"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
